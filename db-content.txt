@@ -1,0 +1,69 @@
+//PERSONS
+CREATE (Jim:PERSON {id:'1', created:'1415537018', name:'Jim', password:'password'})
+CREATE (Jack:PERSON {id:'2', created:'1415537018', name:'Jack', password:'password'})
+CREATE (John:PERSON {id:'3', created:'1415537018', name:'John', password:'password'})
+CREATE (Jones:PERSON {id:'4', created:'1415537018', name:'Jones', password:'password'})
+CREATE (Jimbo:PERSON {id:'5', created:'1415537018', name:'Jimbo', password:'password'})
+
+//SKILLZ
+CREATE (CPP:SKILL{id:'1', name:'C-Programmierung'})
+CREATE (JAVA:SKILL{id:'2', name:'Java-Programmierung'})
+CREATE (CSHARP:SKILL{id:'3', name:'C#-Programmierung'})
+CREATE (PYTHON:SKILL{id:'4', name:'Python-Programmierung'})
+CREATE (BRAINFUCK:SKILL{id:'5', name:'Brainfuck-Programmierung'})
+CREATE (ROCKETPROPULSION:SKILL{id:'6', name:'Rocket Propulsion System Design'})
+CREATE (BOREDOM:SKILL{id:'7', name:'Boredom'})
+CREATE (MANAGEMENT:SKILL{id:'8', name:'Management'})
+CREATE (ACCOUNTING:SKILL{id:'9', name:'Accounting'})
+
+//CORP.
+CREATE (AC:EMPLOYER{id:'1', name:'Awesome Corp.', created:'1415537018', location:'Hamburg', sector:'Awesome Stuff', username:'awesome', password:'password'})
+CREATE (PD:EMPLOYER{id:'2', name:'Probodobodyne', created:'1415537018', location:'KSC', sector:'Space Rockets', username:'probo', password:'password'})
+CREATE (BS:EMPLOYER{id:'3', name:'Boring Stuff Inc.', created:'1415537018', location:'Süderhackstedtfeld', sector:'Boring Stuff', username:'boring', password:'password'})
+CREATE (MSAS:EMPLOYER{id:'4', name:'Mega Super Awful Sh*t', created:'1415537018', location:'Hamburg', sector:'You heard it', username:'msas', password:'password'})
+CREATE (TC:EMPLOYER{id:'5', name:'The EMPLOYER', created:'1415537018', location:'San Francisco', sector:'The future', username:'theonlyone', password:'password'})
+
+//Positions
+CREATE (MANAGER:POSITION{id:'1', name:'Manager of Awesomeness'})
+CREATE (ROCKETENGINEER:POSITION{id:'2', name:'Rocket Engineer'})
+CREATE (ACOUNTANT:POSITION{id:'3', name:'Accountant'})
+CREATE (WASTEPRODUCER:POSITION{id:'4', name:'Head of Waste Production'})
+CREATE (PROGRAMMER:POSITION{id:'5', name:'Engine Programmer'})
+
+//profiles
+CREATE (SEARCH1:PROFILE{id:'1', title:'Search 1'})
+CREATE (SEARCH2:PROFILE{id:'2', title:'Search 2'})
+CREATE (SEARCH3:PROFILE{id:'3', title:'Search 3'})
+CREATE (SEARCH4:PROFILE{id:'4', title:'Search 4'})
+CREATE (SEARCH5:PROFILE{id:'5', title:'Search 5'})
+
+// profile <> SKill
+CREATE (SEARCH1)-[:HAS_SKILL{level:['4']}]->(JAVA)
+CREATE (SEARCH1)-[:HAS_SKILL{level:['3']}]->(CSHARP)
+CREATE (SEARCH2)-[:HAS_SKILL{level:['3']}]->(PYTHON)
+CREATE (SEARCH3)-[:HAS_SKILL{level:['1']}]->(JAVA)
+CREATE (SEARCH4)-[:HAS_SKILL{level:['1']}]->(CSHARP)
+CREATE (SEARCH5)-[:HAS_SKILL{level:['5']}]->(BRAINFUCK)
+
+// company <> position
+CREATE (AC)-[:HAS_POSITION]->(MANAGER)
+CREATE (PD)-[:HAS_POSITION]->(ROCKETENGINEER)
+CREATE (BS)-[:HAS_POSITION]->(ACCOUNTANT)
+CREATE (MSAS)-[:HAS_POSITION]->(WASTEPRODUCER)
+CREATE (TC)-[:HAS_POSITION]->(PROGRAMMER)
+
+// position <> skill
+CREATE (MANAGER)-[:NEEDS_SKILL{level:'5'}]->(MANAGEMENT)
+CREATE (MANAGER)-[:NEEDS_SKILL{level:'2'}]->(BOREDOM)
+CREATE (ROCKETENGINEER)-[:NEEDS_SKILL{level:'5'}]->(ROCKETPROPULSION)
+CREATE (ACCOUNTANT)-[:NEEDS_SKILL{level:'4'}]->(ACCOUNTING)
+CREATE (WASTEPRODUCER)-[:NEEDS_SKILL{level:'5'}]->(BOREDOM)
+CREATE (PROGRAMMER)-[:NEEDS_SKILL{level:'5'}]->(JAVA)
+CREATE (PROGRAMMER)-[:NEEDS_SKILL{level:'5'}]->(CSHARP)
+
+// person <> search
+CREATE (Jim)-[:HAS_PROFILE]->(SEARCH1)
+CREATE (Jack)-[:HAS_PROFILE]->(SEARCH2)
+CREATE (John)-[:HAS_PROFILE]->(SEARCH3)
+CREATE (Jones)-[:HAS_PROFILE]->(SEARCH4)
+CREATE (Jimbo)-[:HAS_PROFILE]->(SEARCH5)
