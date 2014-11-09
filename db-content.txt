@@ -26,7 +26,7 @@ CREATE (TC:EMPLOYER{id:'5', name:'The EMPLOYER', created:'1415537018', location:
 //Positions
 CREATE (MANAGER:POSITION{id:'1', name:'Manager of Awesomeness'})
 CREATE (ROCKETENGINEER:POSITION{id:'2', name:'Rocket Engineer'})
-CREATE (ACOUNTANT:POSITION{id:'3', name:'Accountant'})
+CREATE (ACCOUNTANT:POSITION{id:'3', name:'Accountant'})
 CREATE (WASTEPRODUCER:POSITION{id:'4', name:'Head of Waste Production'})
 CREATE (PROGRAMMER:POSITION{id:'5', name:'Engine Programmer'})
 
