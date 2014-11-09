@@ -43,7 +43,19 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
 		var person = node.get();
 		person.username = username;
 		person.created = new Date().getTime();
-		pseron.$save();
+		person.$save();
+	},
+	connect_employer_has_position: function(employer_id, position_id) {
+		var employer_node = $resource('//localhost:7474/db/data/node/:employer_id', {employer_id:'@employer_id'});
+		var position_node = $resource('//localhost:7474/db/data/node/:position_id', {position_id:'@position_id'});
+		var node = $resource('//localhost:7474/db/data/node/');
+		var employer = employer_node.get();
+		var position = position_node.get();
+		var connection = node.get();
+		connection.start = employer.id;
+		connection.end = position.id;
+		connection.type = 'HAS';
+		connection.$save();	
 	},
     };
 
