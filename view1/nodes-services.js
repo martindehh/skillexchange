@@ -6,6 +6,17 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
             }
         ]
 
+	create_employer: function(name, location, sector, username){
+	        var node = $resource('//localhost:7474/db/data/node/');
+	        	var employer = node.get();
+			employer.name = name;
+			employer.location = location;
+			employer.sector = sector;
+			employer.username = username;
+			employer.save();
+	        });
+	}
+
 
     };
 
