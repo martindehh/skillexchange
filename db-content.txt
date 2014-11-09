@@ -4,6 +4,7 @@ CREATE (Jack:PERSON {id:'2', created:'1415537018', name:'Jack', password:'passwo
 CREATE (John:PERSON {id:'3', created:'1415537018', name:'John', password:'password'})
 CREATE (Jones:PERSON {id:'4', created:'1415537018', name:'Jones', password:'password'})
 CREATE (Jimbo:PERSON {id:'5', created:'1415537018', name:'Jimbo', password:'password'})
+CREATE (Jebediah:PERSON {id:'6', created:'1415537018', name:'Jebediah', password:'password'})
 
 //SKILLZ
 CREATE (CPP:SKILL{id:'1', name:'C-Programmierung'})
@@ -36,6 +37,7 @@ CREATE (SEARCH2:PROFILE{id:'2', title:'Search 2'})
 CREATE (SEARCH3:PROFILE{id:'3', title:'Search 3'})
 CREATE (SEARCH4:PROFILE{id:'4', title:'Search 4'})
 CREATE (SEARCH5:PROFILE{id:'5', title:'Search 5'})
+CREATE (SEARCH6:PROFILE{id:'6', title:'Search 6'})
 
 // profile <> SKill
 CREATE (SEARCH1)-[:HAS_SKILL{level:['4']}]->(JAVA)
@@ -44,6 +46,7 @@ CREATE (SEARCH2)-[:HAS_SKILL{level:['3']}]->(PYTHON)
 CREATE (SEARCH3)-[:HAS_SKILL{level:['1']}]->(JAVA)
 CREATE (SEARCH4)-[:HAS_SKILL{level:['1']}]->(CSHARP)
 CREATE (SEARCH5)-[:HAS_SKILL{level:['5']}]->(BRAINFUCK)
+CREATE (SEARCH6)-[:HAS_SKILL{level:['5']}]->(ROCKETPROPULSION)
 
 // company <> position
 CREATE (AC)-[:HAS_POSITION]->(MANAGER)
@@ -67,3 +70,5 @@ CREATE (Jack)-[:HAS_PROFILE]->(SEARCH2)
 CREATE (John)-[:HAS_PROFILE]->(SEARCH3)
 CREATE (Jones)-[:HAS_PROFILE]->(SEARCH4)
 CREATE (Jimbo)-[:HAS_PROFILE]->(SEARCH5)
+CREATE (Jebediah)-[:HAS_PROFILE]->(SEARCH6)
+
