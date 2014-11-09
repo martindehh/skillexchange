@@ -3,9 +3,9 @@ Protonet Hackathon - Skillexchange
 
 A skill based Job searching platform prototype using Neo4j and angular.js
 
-DB Objects:
+DB Nodes:
 
-Company {
+Employer {
 
 	id (string, optional): UUID
 
@@ -19,8 +19,6 @@ Company {
 
 	username (string, optional): Username
 
-	password (string, optional): Password
-
 }
 
 Position {
@@ -28,6 +26,10 @@ Position {
 	id (string, optional): Unique position id
 
 	title (string, optional): Job Title
+
+	payment (string,optional): Job Payment
+
+	timeframe (string, optional): Working Time
 
 }
 
@@ -39,11 +41,15 @@ Skill {
 
 }
 
-Search {
+Profile {
 
 	id (string, optional): Unique Search ID
 
 	title (string, optional): Title ofthe Jobsearch
+
+	payment (string,optional): Job Payment
+
+	timeframe (string, optional): Working Time
 
 }
 
@@ -54,7 +60,5 @@ Person {
 	created (string, optional): Unix Time Created
 
 	username (string, optional): Username
-
-	password (string, optional): Password
 
 }
