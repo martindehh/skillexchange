@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute' , 'ngResource'])
+angular.module('myApp.view1', ['ngRoute' , 'ngResource', 'nodes-services'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute' , 'ngResource'])
   });
 }])
 
-.controller('View1Ctrl', ['$resource', function( $resource) {
+.controller('View1Ctrl', ['$resource', 'nodesService', function( $resource , nodesService) {
              var resource = $resource('//localhost:7474/db/data/node/1/relationships/all')
         var res = resource.query();
         console.log(res);
