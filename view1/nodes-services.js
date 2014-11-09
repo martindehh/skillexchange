@@ -14,7 +14,7 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
 		employer.sector = sector;
 		employer.username = username;
 		employer.created = new Date().getTime();
-		employer.save();
+		employer.$save();
 	},
 	create_position: function(title, payment, timeframe) {
 		var node = $resource('//localhost:7474/db/data/node/');
@@ -22,13 +22,13 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
 		position.title = title;
 		position.payment = payment;
 		position.timeframe = timeframe;
-		position.save();
+		position.$save();
 	},
 	create_skill: function(name) {
 		var node = $resource('//localhost:7474/db/data/node/');
 		var skill = node.get();
 		skill.name = name;
-		skill.save();
+		skill.$save();
 	},
 	create_profile: function(title, payment, timeframe) {
 		var node = $resource('//localhost:7474/db/data/node/');
@@ -36,14 +36,14 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
 		profile.title = title;
 		profile.payment = payment;
 		profile.timeframe = timeframe;
-		profile.save();
+		profile.$save();
 	},
 	create_person: function(username) {
 		var node = $resource('//localhost:7474/db/data/node/');
 		var person = node.get();
 		person.username = username;
 		person.created = new Date().getTime();
-		pseron.save();
+		pseron.$save();
 	},
     };
 
