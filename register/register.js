@@ -11,6 +11,6 @@ angular.module('myApp.view1', ['ngRoute' , 'ngResource', 'nodes-services'])
 
 .controller('RegisterCtrl', [  function( ) {
 
-        test
+//        test
 
 }]);
