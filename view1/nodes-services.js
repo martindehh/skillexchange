@@ -4,7 +4,7 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
         array: [
             {"data": { "skill": "java"}
             }
-        ]
+        ],
 
 	create_employer: function(name, location, sector, username) {
 	        var node = $resource('//localhost:7474/db/data/node/');
@@ -14,7 +14,7 @@ angular.module('nodes-services', ['ngResource']).factory('nodesService', [ '$res
 			employer.sector = sector;
 			employer.username = username;
 			employer.save();
-	        });
+	        },
     };
 
     return service;
