@@ -6,8 +6,11 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
+    'myApp.register',
+    'myApp.candidate',
+    'myApp.employer'
 
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/register'});
+//  $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
