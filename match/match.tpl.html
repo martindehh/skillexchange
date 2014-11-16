@@ -1,0 +1,19 @@
+<div class="container">
+
+
+    <table>
+        <th ng-repeat="c in match.columns"> {{c}}</th>
+
+        <tr ng-repeat="row in match.data">
+            <td> {{row.row[0].title}}</td>
+            <td>
+                           <span class="skill-tag">
+
+                           {{row.row[1].name}}</td>
+            </span>
+            <td> {{row.row[2].title}}</td>
+
+            <!--<td ng-repeat="col in row"> {{col}}</td>-->
+        </tr>
+    </table>
+</div>

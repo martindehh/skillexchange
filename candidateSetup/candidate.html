@@ -1,7 +1,52 @@
-
-<div> hello Candidate </div>
-
-
-enter skill, qualification/ Haves: <input type="text"/>
+<div class="container">
 
 
+    <h3> Create your profile</h3>
+<div> hello Candidate</div>
+
+please Enter an email adress to create your account: <input type="text" ng-model="user.email"/> (your email will not be publicly visible)
+<hr/>
+
+enter skill, qualification/ Haves: <input type="text" ng-model="data.newSkill.name" typeahead="skill for skill in dbSkills | filter:$viewValue | limitTo:20" >
+<button class="btn btn-success" ng-click="add(data.newSkill)"> add</button>
+
+
+<table>
+    <tr>
+
+
+        <th>id </th>
+        <th>skill </th>
+        <th>level
+        </th>
+
+    </tr>
+
+
+    <tr ng-repeat="skill in data.skills track by $index">
+
+        <td>
+
+          {{skill.id}}
+        </td>
+        <td>
+
+            <span class="skill-tag">
+
+            {{skill.name}}
+            </span>
+        </td>
+        <td>
+
+         <rating ng-model="skill.level" max="rating.max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>   {{skill.level}}
+        </td>
+    </tr>
+
+</table>
+
+<hr/>
+
+
+name your profile <input type="text" ng-model="profile.title"/> ( this is not public visible) <br/>
+    <button class="btn btn-warning" ng-click="submit()"> submit your profile</button>
+</div>

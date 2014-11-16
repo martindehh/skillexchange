@@ -13,17 +13,27 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="candidate.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
+<div class="container">
+
+    <div class="text-center">
+
+
   <ul class="menu">
+      <!--
     <li><a href="#/view1">view1</a></li>
     <li><a href="#/view2">view2</a></li>
+       -->
     <li><a href="#/register">register</a></li>
     <li><a href="#/candidate">candidate setup</a></li>
     <li><a href="#/employer">employer setup</a></li>
+    <li><a href="#/match">match</a></li>
   </ul>
-
+    </div>
+</div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -39,6 +49,8 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="app.js"></script>
 
   <script src="view1/nodes-services.js"></script>
@@ -48,6 +60,8 @@
   <script src="employerSetup/employer.js"></script>
 
   <script src="register/register.js"></script>
+  <script src="match/match.index.js"></script>
+  <script src="match/match.controllers.js"></script>
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

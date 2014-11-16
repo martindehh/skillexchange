@@ -1,22 +1,60 @@
-    <div class="container">
+<div class="container well-lg">
 
 
+    <div>
+        <div class="row">
 
-<div>
-<h1> Skill Exchange</h1>
+            <div class="col-md-12 ">
 
-    <div class="row">
+                <h1 class="text-center"> Skill Exchange</h1>
 
-Looking for People / contributers?
-            <a class="btn btn-default"  href="#/employer">     Signup as Employer / Project Owner</a> find the people with the right skills
+
+            </div>
+
+        </div>
+        <div class="row signup well">
+
+            <div class="col-md-4 ">
+                You have a project /vacancy  and your are looking for people or contributors?
+            </div>
+            <div class="col-md-4 ">
+                <a class="btn btn-warning" href="#/employer"> Signup as Employer / Project Owner</a>
+            </div>
+            <div class="col-md-4 ">
+
+
+                find the people with the right skills
+            </div>
+        </div>
+    </div>
+    <div class="row signup well">
+
+            <div class="col-md-4 ">
+                you want to expand your skill set and your are
+                looking for challenging projects / work?
+            </div>
+            <div class="col-md-4 ">
+
+                <a class="btn btn-warning" href="#/candidate"> Signup as Candidate / Contributer </a>
+            </div>
+            <div class="col-md-4 ">
+
+                find interesting opportunities to work on
+            </div>
+
+        </div>
+
 
     </div>
-<div class="row"> Looking for interesting projects / work?
-<a   class="btn btn-warning" href="#/candidate">   Signup as Candidate / Contributer </a> find challenging and opportunities
+        <div class="container">
 
 
+            <div class="col-12">
+
+                <span ng-repeat="skill in data.skills track by $index" class="skill-tag"> {{skill.data.name}}<span>
+            </div>
+        </div>
 
 
 </div>
 </div>
-    </div>

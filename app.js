@@ -8,7 +8,9 @@ angular.module('myApp', [
   'myApp.version',
     'myApp.register',
     'myApp.candidate',
-    'myApp.employer'
+    'myApp.employer',
+    'ui.bootstrap',
+    'match'
 
 ]).
 config(['$routeProvider', function($routeProvider) {
